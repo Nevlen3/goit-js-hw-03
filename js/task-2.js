@@ -1,15 +1,36 @@
-function formatMessage(message, maxLength) {
-    if (message.length <= maxLength) {
-        return message;
+function makeArray(firstArray, secondArray, maxLength) {
+    let result = firstArray.push(secondArray)
+    if (result.length > maxLength) {
+        
     }
-    else {
-        return message.slice(0, maxLength) + "...";
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        
     }
 }
 
-console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
-console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
-console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
-console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
+
+
+/* Напиши функцию под названием  makeArray, которая принимает три параметра:  
+firstArray (массив),  secondArray (массив) и  maxLength (число). 
+Функция должна создавать новый массив, содержащий все элементы из  firstArray, 
+а затем все элементы из  secondArray.
+
+Если количество элементов в новом массиве превышает  maxLength, 
+функция должна вернуть копию массива с длиной  maxLength элементов.
+В противном случае функция должна вернуть весь новый массив.
+*/
+
+
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+// [ "Mango" , "Poly" , "Ajax" ] 
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
+// [ "Mango" , "Poly" , "Houston" , "Ajax" ] 
+console .log (makeArray( [ "Mango" ] , [ "Ajax" , "Chelsea" , "Poly" , "Houston" ] , 3 )); 
+// [ "Mango" , "Ajax" , "Chelsea" ] 
+console .log (makeArray( [ "Earth" , "Jupiter" ] , [ "Neptune" , "Uranus" ] , 2 )); 
+// [ "Earth" , "Jupiter" ] 
+console .log (makeArray( [ "Earth" , "Jupiter" ] , [ "Neptune" , "Uranus" ] , 4 )); 
+// [ "Earth" , "Jupiter" , "Neptune" , "Uranus" ] 
+console .log (makeArray( [ "Earth" , "Jupiter" ] , [ "Neptune" , "Uranus" , "Venus" ] , 0 )); 
+// [] 
